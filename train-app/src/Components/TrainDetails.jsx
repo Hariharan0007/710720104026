@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import trainImage from './train.png';
 
 const TrainDetails = () => {
   const [trains, setTrains] = useState([]);
@@ -29,6 +30,7 @@ const TrainDetails = () => {
             className="col-md-4 mb-4"
           >
             <div className="card h-100">
+            <img src={trainImage} className="card-img-top" alt="Train" />
               <div className="card-body">
                 <h5 className="card-title">{train.trainName}</h5>
                 <p className="card-text">Train Number: {train.trainNumber}</p>
