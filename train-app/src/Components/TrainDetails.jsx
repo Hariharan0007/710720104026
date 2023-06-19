@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const TrainDetails = () => {
   const [trains, setTrains] = useState([]);
@@ -18,33 +19,28 @@ const TrainDetails = () => {
   };
 
   return (
-    <div>
-      <h1 style={{ padding: '20px', margin: '20px' }}>Train Details</h1>
+    <div className="container">
+      <h1 className="mt-5 mb-4">Train Details</h1>
       <hr />
-      <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+      <div className="row">
         {trains.map((train) => (
           <div
             key={train.trainNumber}
-            style={{
-              border: '1px solid gray',
-              borderRadius: '5px',
-              padding: '10px',
-              margin: '10px',
-              width: '300px',
-            }}
+            className="col-md-4 mb-4"
           >
-            <h2>{train.trainName}</h2>
-            <p>Train Number: {train.trainNumber}</p>
-            <p>Delayed By: {train.delayedBy} minutes</p>
-            <p>
-              Departure Time: {train.departureTime.Hours}:
-              {train.departureTime.Minutes}:{train.departureTime.Seconds}
-            </p>
-            <p>Price (AC): {train.price.AC}</p>
-            <p>Price (Sleeper): {train.price.sleeper}</p>
-            <p>Seats Available (AC): {train.seatsAvailable.AC}</p>
-            <p>Seats Available (Sleeper): {train.seatsAvailable.sleeper}</p>
-              <button>View Details</button>
+            <div className="card h-100">
+              <div className="card-body">
+                <h5 className="card-title">{train.trainName}</h5>
+                <p className="card-text">Train Number: {train.trainNumber}</p>
+                <p className="card-text">Delayed By: {train.delayedBy} minutes</p>
+                <p className="card-text">Departure Time: {train.departureTime.Hours}:{train.departureTime.Minutes}:{train.departureTime.Seconds}</p>
+                <p className="card-text">Price (AC): {train.price.AC}</p>
+                <p className="card-text">Price (Sleeper): {train.price.sleeper}</p>
+                <p className="card-text">Seats Available (AC): {train.seatsAvailable.AC}</p>
+                <p className="card-text">Seats Available (Sleeper): {train.seatsAvailable.sleeper}</p>
+                <button className="btn btn-primary">Go to Train</button>
+              </div>
+            </div>
           </div>
         ))}
       </div>
