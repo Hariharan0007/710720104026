@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+// import { Link } from 'react-router-dom';
 
 const TrainDetails = () => {
   const [trains, setTrains] = useState([]);
@@ -44,6 +45,9 @@ const TrainDetails = () => {
             <p>Price (Sleeper): {train.price.sleeper}</p>
             <p>Seats Available (AC): {train.seatsAvailable.AC}</p>
             <p>Seats Available (Sleeper): {train.seatsAvailable.sleeper}</p>
+            {/* <Link to={`/train/${train.trainNumber}`}> */}
+              <button>View Details</button>
+            {/* </Link> */}
           </div>
         ))}
       </div>
