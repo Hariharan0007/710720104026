@@ -12,7 +12,7 @@ from datetime import datetime, timedelta
 app = Flask(__name__)
 CORS(app)
 API_URL = 'http://104.211.219.98/train/trains'
-BEARER_TOKEN = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2ODcxNjU3MjksImNvbXBhbnlOYW1lIjoiNzEwNzIwMTA0MDI2IiwiY2xpZW50SUQiOiJkOTFlNjY1Ni05MjZkLTQwNDUtYjM3ZS03NzA5OWE4Y2E0ZmYiLCJvd25lck5hbWUiOiIiLCJvd25lckVtYWlsIjoiIiwicm9sbE5vIjoiNzEwNzIwMTA0MDI2In0.4NOFpUUQDmCsWEqByVlSU77i53FWwYKnGxDSM5mDxoA'
+BEARER_TOKEN = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2ODcxNjY5MjAsImNvbXBhbnlOYW1lIjoiNzEwNzIwMTA0MDI2IiwiY2xpZW50SUQiOiJkOTFlNjY1Ni05MjZkLTQwNDUtYjM3ZS03NzA5OWE4Y2E0ZmYiLCJvd25lck5hbWUiOiIiLCJvd25lckVtYWlsIjoiIiwicm9sbE5vIjoiNzEwNzIwMTA0MDI2In0.Tf3Qq-7DUYNdNmaN0vSbl2xNwVN8fFbN5aL0zgXtYZA'
 
 @app.route('/', methods=['GET'])
 def get_sorted_trains():
