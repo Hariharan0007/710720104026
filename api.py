@@ -4,7 +4,7 @@ import datetime
 
 current_time = datetime.datetime.now()
 formatted_time = current_time.strftime("%H:%M:%S")
-print(formatted_time)
+
 
 
 app = Flask(__name__)
@@ -17,46 +17,7 @@ def get_sorted_trains():
     response = requests.get(API_URL, headers=headers)
     response.raise_for_status()
 
-    # data = response.json()
-
-    data =[
-  {
-    "delayedBy": 1,
-    "departureTime": {
-      "Hours": 0,
-      "Minutes": 10,
-      "Seconds": 0
-    },
-    "price": {
-      "AC": 645,
-      "sleeper": 412
-    },
-    "seatsAvailable": {
-      "AC": 5,
-      "sleeper": 15
-    },
-    "trainName": "Funny Exp",
-    "trainNumber": "2341"
-  },
-  {
-    "delayedBy": 1,
-    "departureTime": {
-      "Hours": 15,
-      "Minutes": 15,
-      "Seconds": 0
-    },
-    "price": {
-      "AC": 645,
-      "sleeper": 412
-    },
-    "seatsAvailable": {
-      "AC": 5,
-      "sleeper": 15
-    },
-    "trainName": "Funny Exp",
-    "trainNumber": "2341"
-  }
-    ]
+    data = response.json()
 
     selected_train = []
     
