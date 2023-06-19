@@ -1,4 +1,5 @@
 from flask import Flask, jsonify
+from flask_cors import CORS
 import requests
 from datetime import datetime, timedelta
 
@@ -9,8 +10,9 @@ from datetime import datetime, timedelta
 
 
 app = Flask(__name__)
+CORS(app)
 API_URL = 'http://104.211.219.98/train/trains'
-BEARER_TOKEN = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2ODcxNjEyODYsImNvbXBhbnlOYW1lIjoiNzEwNzIwMTA0MDI2IiwiY2xpZW50SUQiOiJkOTFlNjY1Ni05MjZkLTQwNDUtYjM3ZS03NzA5OWE4Y2E0ZmYiLCJvd25lck5hbWUiOiIiLCJvd25lckVtYWlsIjoiIiwicm9sbE5vIjoiNzEwNzIwMTA0MDI2In0.Se4-gGkgUwo-wE9ZdVaC9lBriBPAxbrXrVaeYFV3kKo'
+BEARER_TOKEN = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2ODcxNjI5MjYsImNvbXBhbnlOYW1lIjoiNzEwNzIwMTA0MDI2IiwiY2xpZW50SUQiOiJkOTFlNjY1Ni05MjZkLTQwNDUtYjM3ZS03NzA5OWE4Y2E0ZmYiLCJvd25lck5hbWUiOiIiLCJvd25lckVtYWlsIjoiIiwicm9sbE5vIjoiNzEwNzIwMTA0MDI2In0.-rfCtFBstkYTR1HjM0ecuerkxQNDz22t2QvB6avIHtQ'
 
 @app.route('/', methods=['GET'])
 def get_sorted_trains():
